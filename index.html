@@ -12,7 +12,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: radial-gradient(#fff0f3, #ffccd5);
+            background: radial-gradient(#fff0f3, #ffccd5); /* Your requested pink theme */
             font-family: 'Arial', sans-serif;
             overflow: hidden;
         }
@@ -74,6 +74,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Heart Animation Background */
         .heart {
             position: absolute;
             color: rgba(255, 77, 109, 0.4);
@@ -89,6 +90,7 @@
             100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
         }
 
+        /* Firework Effect */
         .firework {
             position: absolute;
             width: 6px;
@@ -107,25 +109,29 @@
             
             <div class="button-container">
                 <button id="yesBtn" onclick="showLove()">YES</button>
-                <button id="noBtn" onmouseover="dodge()" onclick="goToSong()">No</button>
+                <button id="noBtn" onmouseover="dodge()">No</button>
             </div>
         </div>
 
         <div id="loveSection" class="success-content">
             <h1>❤️ I Love You! ❤️</h1>
-            <p style="font-size: 1.05rem; line-height: 1.6; font-weight: bold; text-align: center; color: #590d22;">
-                உன் குடும்பத்தின் பாசமும் - என் மேல் நீ கொண்ட நேசமும் என் உயிர் அறியும்!<br><br>
-                நமக்காக நீ சிந்தும் ஒவ்வொரு கண்ணீரும், உன் ஆழ்மனப் பயமும் என் இதயம் அறியும்! இந்த உலகமே திரண்டு எதிர்த்து நின்றாலும் - உன் அச்சம் தீர்க்கும் அரணாக நான் இருப்பேன்!<br><br>
-                காலங்கள் மாறலாம்... கோலங்கள் சிதையலாம்... ஆனால், ஒருபோதும் உன்னை மட்டும் - நான் யாரோடும், எதற்காகவும் விட்டுக்கொடுக்க மாட்டேன்!<br><br>
-                என் கடைசி மூச்சு விடைபெறும் அந்த நொடியில்... உன் முகம் பார்த்து, உன் மடி சாய்ந்து, புன்னகையோடு மரணத்தைத் தழுவுவதே - என் வாழ்வின் ஆகச்சிறந்த வரமாகும்!<br><br>
-                லவ் யூ பொண்டாட்டி! நீயே என் ராணி
+            <p style="font-size: 1.1rem; line-height: 1.5; font-weight: bold;">
+                உன் குடும்பத்தின் பாசமும் - என் மேல் நீ கொண்ட நேசமும் என் உயிர் அறியும்!
+
+நமக்காக நீ சிந்தும் ஒவ்வொரு கண்ணீரும், உன் ஆழ்மனப் பயமும் என் இதயம் அறியும்! இந்த உலகமே திரண்டு எதிர்த்து நின்றாலும் - உன் அச்சம் தீர்க்கும் அரணாக நான் இருப்பேன்!
+
+காலங்கள் மாறலாம்... கோலங்கள் சிதையலாம்... ஆனால், ஒருபோதும் உன்னை மட்டும் - நான் யாரோடும், எதற்காகவும் விட்டுக்கொடுக்க மாட்டேன்!
+
+என் கடைசி மூச்சு விடைபெறும் அந்த நொடியில்... உன் முகம் பார்த்து, உன் மடி சாய்ந்து, புன்னகையோடு மரணத்தைத் தழுவுவதே - என் வாழ்வின் ஆகச்சிறந்த வரமாகும்!
+
+லவ் யூ பொண்டாட்டி! நீயே என் ராணி
             </p>
             <p style="color: #ff4d6d; font-weight: bold;">- Yours, Ranjith</p>
         </div>
     </div>
 
     <script>
-        // No பொத்தான் ஓடுவதற்கு
+        // Make the No button run away
         function dodge() {
             const btn = document.getElementById('noBtn');
             const newX = Math.random() * (window.innerWidth - btn.offsetWidth - 20) + 10;
@@ -136,18 +142,14 @@
             btn.style.top = newY + 'px';
         }
 
-        // ஒருவேளை No அழுத்தப்பட்டால் YouTube செல்ல
-        function goToSong() {
-            window.location.href = "https://www.youtube.com/shorts/lFKmdfpSj68";
-        }
-
-        // Yes அழுத்தினால்
+        // When she finally clicks Yes
         function showLove() {
             document.getElementById('askSection').style.display = 'none';
             document.getElementById('loveSection').style.display = 'block';
             startFireworks();
         }
 
+        // Heart animation background
         function createHearts() {
             for(let i=0; i<25; i++) {
                 let heart = document.createElement('div');
@@ -160,6 +162,7 @@
         }
         createHearts();
 
+        // Fireworks celebration
         function startFireworks() {
             for(let i=0; i<20; i++) {
                 setTimeout(() => {
